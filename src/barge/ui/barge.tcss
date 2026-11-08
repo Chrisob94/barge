@@ -1,0 +1,225 @@
+Screen {
+    background: $background;
+}
+
+* {
+    scrollbar-background: $surface;
+    scrollbar-background-hover: $surface;
+    scrollbar-background-active: $surface;
+    scrollbar-color: $panel-lighten-2;
+    scrollbar-color-hover: $primary 60%;
+    scrollbar-color-active: $primary;
+    scrollbar-size-vertical: 1;
+}
+
+#tabbar {
+    height: 1;
+    background: $panel;
+}
+
+#sessions {
+    height: 1fr;
+}
+
+.session {
+    height: 1fr;
+}
+
+FilePane {
+    width: 1fr;
+    height: 1fr;
+}
+
+FilePane#right {
+    border-left: vkey $panel;
+}
+
+.pane-header {
+    height: 1;
+    padding: 0 1;
+    background: $surface;
+    color: $text-muted;
+}
+
+FilePane.-active .pane-header {
+    background: $primary 15%;
+    color: $foreground;
+}
+
+.pane-colhead {
+    height: 1;
+    padding: 0 1;
+}
+
+FilePane DataTable {
+    height: 1fr;
+    background: $background;
+    scrollbar-size-vertical: 1;
+    padding: 0;
+}
+
+FilePane DataTable > .datatable--cursor {
+    background: $panel;
+}
+
+FilePane.-active DataTable:focus > .datatable--cursor {
+    background: $primary 22%;
+}
+
+#filter {
+    height: 1;
+    border: none;
+    padding: 0 1;
+    background: $warning 12%;
+}
+
+.hidden {
+    display: none;
+}
+
+.pane-info {
+    height: 1;
+    padding: 0 1;
+    background: $surface;
+}
+
+.dock {
+    height: auto;
+    max-height: 8;
+    padding: 0 1;
+    background: $surface;
+    border-top: hkey $panel;
+}
+
+#keys {
+    height: 1;
+    padding: 0 1;
+    background: $panel;
+}
+
+/* dialogs */
+
+.dialog-screen {
+    align: center middle;
+    background: $background 70%;
+}
+
+.dialog {
+    width: 66;
+    height: auto;
+    max-height: 85%;
+    padding: 1 2;
+    background: $surface;
+    border: round $primary;
+}
+
+.dialog-title {
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+.dialog-body {
+    color: $text-muted;
+    margin-bottom: 1;
+}
+
+.dialog-hint {
+    color: $text-muted;
+    margin-top: 1;
+}
+
+.dialog Input {
+    border: tall $panel;
+    background: $background;
+}
+
+.dialog Input:focus {
+    border: tall $primary;
+}
+
+.dialog-buttons {
+    height: auto;
+    align-horizontal: right;
+}
+
+.dialog-buttons Button {
+    margin-left: 1;
+    min-width: 10;
+}
+
+.help {
+    width: 60;
+}
+
+/* palette */
+
+.palette-screen {
+    align: center top;
+    padding-top: 3;
+}
+
+.palette {
+    width: 80;
+    height: auto;
+    max-height: 26;
+    background: $surface;
+    border: round $primary;
+}
+
+.palette Input {
+    height: 1;
+    border: none;
+    padding: 0 1;
+    background: $surface;
+}
+
+.palette OptionList {
+    height: auto;
+    max-height: 20;
+    border: none;
+    border-top: hkey $panel;
+    background: $surface;
+    padding: 0;
+}
+
+.palette OptionList > .option-list--option-highlighted {
+    background: $primary 22%;
+}
+
+.palette-hint {
+    color: $text-muted;
+    padding: 0 1;
+    border-top: hkey $panel;
+}
+
+/* sync and preview */
+
+.sync {
+    width: 90%;
+    height: 80%;
+}
+
+.sync DataTable {
+    height: 1fr;
+    background: $surface;
+}
+
+.sync-title,
+.sync-footer {
+    height: auto;
+}
+
+.sync-footer {
+    border-top: hkey $panel;
+}
+
+.preview {
+    width: 92%;
+    height: 90%;
+    padding: 0 1;
+}
+
+.preview-title {
+    height: 1;
+    margin-bottom: 1;
+}

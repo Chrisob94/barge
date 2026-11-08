@@ -1,0 +1,12 @@
+# Copy to ~/.config/barge/config.toml and edit.
+
+[profiles.photos]
+type = "s3"
+bucket = "my-photos"
+prefix = "originals"
+region = "eu-west-1"
+
+[profiles.web-01]
+type = "ssh"
+host = "web-01"
+root = "/var/www"

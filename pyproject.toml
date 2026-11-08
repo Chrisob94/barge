@@ -1,0 +1,47 @@
+[project]
+name = "barge"
+version = "0.1.0"
+description = "A two-pane terminal file manager for local disks, S3 buckets and SSH servers."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Chris O'Brien" }]
+requires-python = ">=3.11"
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Filesystems",
+]
+dependencies = [
+    "boto3>=1.40",
+    "paramiko>=4.0",
+    "scp>=0.15",
+    "textual>=8.0",
+]
+
+[project.scripts]
+barge = "barge.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[dependency-groups]
+dev = [
+    "moto[s3]>=5.2.5",
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.4.1.post1",
+    "ruff>=0.17.4",
+]
